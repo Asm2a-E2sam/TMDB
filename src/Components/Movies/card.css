@@ -1,0 +1,55 @@
+.card{
+    margin-top: 30px;
+    border: 1px solid #ddd !important;
+    border-radius: 5px;
+    padding: 0;
+    width: 173px !important;
+    height: 363px !important;
+}
+.card img{
+    max-width: 173px;
+    max-height: 263px;
+    border-radius: 5px 5px 0 0;
+}
+
+.myprogress{
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    padding: 2px;
+    background-color: rgb(5, 26, 9);
+    position: relative;
+    top: -20px;
+    left: 10px;
+}
+
+.myprogress div{
+    position: relative;
+    top: -26px;
+    font-size: 12px !important;
+    color: white;
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    left: 7px;
+}
+
+.myprogress span{
+    font-size: 5px !important;
+    position: relative;
+    top: -6px !important;
+    left: -3px;
+}
+
+.card h5{
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 0;
+    font-weight: 650;
+    padding-left: 10px;
+}
+h5+span{
+    font-size: 16px;
+    color: #999;
+    padding-left: 10px;
+}
+
