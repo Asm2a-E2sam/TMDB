@@ -1,14 +1,18 @@
-.card{
-    margin-top: 30px;
+
+@font-face {
+    font-family: 'myFontBold';
+    src: url('./SourceSansPro-Bold.otf') format('opentype');
+  }
+.card-sm{
     border: 1px solid #ddd !important;
     border-radius: 5px;
-    padding: 0;
+    padding: 0 !important;
     width: 173px !important;
-    height: 363px !important;
+    height: 375px !important;
 }
-.card img{
-    max-width: 173px;
-    max-height: 263px;
+.card-sm img{
+    width: 171px;
+    height: 263px;
     border-radius: 5px 5px 0 0;
 }
 
@@ -30,12 +34,13 @@
     color: white;
     font-weight: bold;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    left: 7px;
+    left: 9px;
 }
 
 .myprogress span{
     font-size: 5px !important;
     position: relative;
+    color: white;
     top: -6px !important;
     left: -3px;
 }
@@ -53,3 +58,107 @@ h5+span{
     padding-left: 10px;
 }
 
+.fw-bolder{
+    font-family: 'myFontBold',sans-serif !important;
+}
+
+.box{
+    padding: 15px 15px 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-search{
+    height: 45px;
+    background-color: #eee !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    color: #888 !important;
+    border-radius: 19px !important;
+}
+
+.fs-box{
+    font-size: 18px;
+}
+
+.cards{
+    width: 173px !important;
+    height: 375px !important;
+    display: inline;
+}
+
+.bg{
+    /* background-image: linear-gradient(to right, #202035 calc((50vw - 170px) - 340px), #202035d6 50%, #202035d6 100%); */
+    height: 570px;
+}
+
+.img-de{
+    width: 300px;
+    height: 450px;
+}
+
+.arrow{
+    font-size: 18px;
+    padding: 0 3px;
+}
+
+.line{
+    border-bottom: 3px solid #39c !important;
+}
+
+.mybadge{
+    padding: 0 5px 5px!important;
+    border:1px solid #888 !important;
+    color: #aaa !important;
+    height: 19px;
+    border-radius: 3px !important;
+}
+.text-light2{
+    color: #aaa !important;
+}
+.fs-7{
+    font-size: 13px !important;
+}
+
+.myprogress-2{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 2px;
+    background-color: #081c22;
+    position: relative;
+}
+
+.myprogress-2 div{
+    position: relative;
+    top: -50px;
+    font-size: 25px !important;
+    color: white;
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    left: 16px;
+}
+
+.myprogress-2 span{
+    font-size: 10px !important;
+    position: relative;
+    color: white;
+    top: -12px !important;
+    left: -5px;
+}
+
+.circle{
+    background-color: #032541;
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.options{
+    font-size: 17px;
+    margin-top: 15px;
+    color: white !important;
+
+}

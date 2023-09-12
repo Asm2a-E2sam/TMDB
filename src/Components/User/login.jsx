@@ -1,6 +1,12 @@
 import Form from "react-bootstrap/Form";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate() 
+
+  const goToRegister=()=>{
+    navigate("/register");
+  }
   return (
     <Form className="container m-5">
       <h3>Login to your account</h3>
@@ -8,7 +14,7 @@ function Login() {
         In order to use the editing and rating capabilities of TMDB, as well as
         get personal recommendations you will need to login to your account. If
         you do not have an account, registering for an account is free and
-        simple. <span className="text-primary" role="button">Click here</span> to get started.
+        simple. <span className="text-primary" role="button" onClick={()=>{goToRegister()}}>Click here</span> to get started.
       </p>
       <p>
         If you signed up but did not get your verification email, <span className="text-primary" role="button">click here</span> to

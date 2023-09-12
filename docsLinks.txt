@@ -1,0 +1,12 @@
+*************************** react bootstrap ***************************** 
+https://react-bootstrap.netlify.app/docs/getting-started/introduction
+
+***************************** react icons ******************************* 
+https://react-icons.github.io/react-icons/
+
+*************************** react router dom **************************** 
+https://reactrouter.com/en/main/start/tutorial
+
+******************************* axios *********************************** 
+
+

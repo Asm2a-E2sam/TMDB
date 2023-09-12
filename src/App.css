@@ -1,3 +1,12 @@
+@font-face {
+  font-family: myFont;
+  src: url('./SourceSansPro-Light.otf');
+}
+
+*{
+  font-family:myFont;
+  font-weight: 500;
+}
 .bg-aqua{
   background-color: rgb(1,180,228) !important;
 }
@@ -30,46 +39,3 @@
   background:#e9edf3!important ;
 }
 
-.nav-bg{
-  background-color: rgb(3,37,65) !important;
-}
-
-.link{
-  color: #fff !important;
-  font-weight: 550 !important;
-  font-size: 16px !important;
-  margin-right: 12px;
-  margin-top: 5px;
-}
-
-.logo{
-  margin-left: 40px;
-}
-
-.plus{
-  margin-left: 29.6rem !important;
-  font-size: 30px !important;
-  padding: 0 !important;
-  font-weight: 900 !important;
-  color: #fff !important;
-}
-
-.en{
-  color: #fff !important;
-  font-weight: 550 !important;
-  font-size: 14px !important;
-  border: 1px solid white !important;
-  padding: 5px !important;
-  margin-left: 25px;
-  margin-top: 10px;
-  height: 30px;
-  border-radius: 5px;
-}
-
-.link2{
-  color: #fff !important;
-  font-weight: 550 !important;
-  font-size: 16px !important;
-  margin-left: 18px;
-  margin-top: 5px;
-}

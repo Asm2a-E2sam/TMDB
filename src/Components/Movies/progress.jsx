@@ -5,7 +5,7 @@ export function Progress(args){
 <CircularProgressbar
   value={args.percentage}
   styles={buildStyles({
-    pathColor: `rgba(1,210,119)`,
+    pathColor: `${args.color}`,
     trailColor: 'rgba(155,155,155,0.3)',
     strokeLinecap:'',
     backgroundColor: '#3e98c7',

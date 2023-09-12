@@ -1,0 +1,20 @@
+.search-bg{
+    position: relative !important;
+    top: -55px !important;
+    z-index: -1;
+}
+
+.search-bg h1{
+    position: relative;
+    top: 70px;
+}
+
+.search-bg h2{
+    position: relative;
+    top: 65px;
+}
+
+.search-bg input{
+    position: relative;
+    top: 70px;
+}
