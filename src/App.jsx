@@ -5,8 +5,8 @@ import AllMovies from "./Components/Movies/allMovies";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MovieDetails from "./Components/Movies/movieDetails";
 import NotFound from "./Components/NotFound/notFound";
-import People from "./Components/People/People";
-import Home from "./Components/Home/Home";
+import People, {loader as peopleLoader} from "./Components/People/People";
+import Home, {loader as homeLoader}  from "./Components/Home/Home";
 import AppLayout from "./AppLayout";
 import store from "./store/store";
 import { Provider } from "react-redux";
@@ -23,9 +23,9 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "/login", element: <Login /> },
       { path: "/register", element: <Register /> },
-      { path: "/home", element: <Home />},
+      { path: "/home", element: <Home />, loader: homeLoader},
       { path: "/movies", element: <AllMovies /> },
-      { path: "/people", element: <People /> },
+      { path: "/people", element: <People /> , loader:peopleLoader},
       { path: "/movies/:id", element: <MovieDetails /> },
       { path: "/favorites", element: <Favorites /> },
       { path: "*", element: <NotFound /> },

@@ -1,7 +1,8 @@
 // import { useEffect } from 'react'
 // import { getTrending } from '../../store/slices/People'
 // import { useDispatch, useSelector } from 'react-redux';
-// import { Link } from "react-router-dom";
+import { useLoaderData } from 'react-router-dom';
+
 
 
 export default function People(){
@@ -11,9 +12,14 @@ export default function People(){
 // // dispatch(getTrending())
 // },[])
 
-
+  let list = useLoaderData()
 
   return <>
-
+      <h1>{list}</h1>
   </>
 }
+
+
+export const loader = async () => {
+  return "hello";
+};
