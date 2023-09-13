@@ -6,12 +6,12 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MovieDetails from "./Components/Movies/movieDetails";
 import NotFound from "./Components/NotFound/notFound";
 import People from "./Components/People/People";
-import Home, { loader as homeLoader } from "./Components/Home/Home";
+import Home from "./Components/Home/Home";
 import AppLayout from "./AppLayout";
 import store from "./store/store";
 import { Provider } from "react-redux";
 import Favorites from "./Components/Favorites/Favorites";
-import LanguageContextProvide from "./context/LanguageContext";
+import {LanguageContextProvide} from "./context/LanguageContext";
 import { useState } from "react";
 
 const router = createBrowserRouter([
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "/login", element: <Login /> },
       { path: "/register", element: <Register /> },
-      { path: "/home", element: <Home />, loader: homeLoader },
+      { path: "/home", element: <Home />},
       { path: "/movies", element: <AllMovies /> },
       { path: "/people", element: <People /> },
       { path: "/movies/:id", element: <MovieDetails /> },
