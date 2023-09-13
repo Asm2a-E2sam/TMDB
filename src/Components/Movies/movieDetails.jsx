@@ -79,10 +79,10 @@ export default function MovieDetails() {
   }
 
   const toggelFavorite = ()=>{
-      dispatch(toggleFavorite(movie))
+    dispatch(toggleFavorite(movie))
+  }
       // console.log(favorites);
       // console.log("click");
-  }
 
     return (
     <>
