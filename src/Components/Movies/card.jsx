@@ -22,7 +22,7 @@ function MovieCard(args) {
           <img src={`${args.path}`} className="card-img"/>
           <div className="myprogress">
           <Progress percentage={args.percentage} color={color}/>
-          <div>{args.percentage} <span>%</span></div>
+          <div>{Math.floor(args.percentage)} <span>%</span></div>
           </div>
           <h5>{args.title}</h5>
           <span>{args.date}</span>

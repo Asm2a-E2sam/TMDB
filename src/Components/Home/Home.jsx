@@ -1,6 +1,6 @@
+import axiosInstance from "../../axiosConfig/instance";
 import "./home.css";
 import { Container, Row } from "react-bootstrap";
-import axiosInstance from "../../axiosConfig/instance";
 import { useLoaderData } from "react-router-dom";
 import MovieCard from "../Movies/card";
 
@@ -25,7 +25,7 @@ export default function Home() {
           </h2>
           <input type="text" className="form-control my-5" placeholder="" />
         </div>
-        <Row className="justify-content-center gap-4">
+        { <Row className="justify-content-center gap-2">
             <h3>popular</h3>
               {data.popular.map((movie) => {
                 return (
@@ -41,7 +41,7 @@ export default function Home() {
                 );
               })}
             </Row>
-            <Row className="justify-content-center gap-4">
+            /*<Row className="justify-content-center gap-4">
               <h3>topRate</h3>
               {data.topRate.map((movie) => {
                 return (
@@ -72,7 +72,7 @@ export default function Home() {
                   </div>
                 );
               })}
-            </Row>
+            </Row> */}
       </Container>
     </>
   );
@@ -82,21 +82,19 @@ export const loader = async () => {
   let myKey = "d4a2b4ff4209071cf753eff2f3d101cd";
   let results = {};
   try {
-    let res1 = await axiosInstance.get(`/3/movie/popular?api_key=${myKey}`, {
-      limit: 6,
-    });
-    results.popular = res1.data;
-    let res2 = await axiosInstance.get(`/3/movie/top-rated?api_key=${myKey}`, {
-      limit: 6,
-    });
-    results.topRate = res2.data;
-    let res3 = await axiosInstance.get(`/3/movie/upcoming?api_key=${myKey}`, {
-      limit: 6,
-    });
-    results.upcoming = res3.data;
+    let res1 = await axiosInstance.get(`/3/movie/popular?api_key=${myKey}`);
+    results.popular = res1.data.results.slice(0, 7);
+    console.log(results);
+    // let res2 = await axiosInstance.get(`/3/movie/top-rated?api_key=${myKey}`);
+    // results.topRate = res2.data.results.slice(0, 7);
+    // console.log(results);
+    // let res3 = await axiosInstance.get(`/3/movie/upcoming?api_key=${myKey}`);
+    // results.upcoming = res3.data.results.slice(0, 7);
+    // console.log(results);
     
     return results;
   } catch (err) {
     console.log(err);
   }
 };
+

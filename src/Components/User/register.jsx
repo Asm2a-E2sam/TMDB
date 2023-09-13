@@ -10,7 +10,7 @@ function Register() {
           <div className="bg-white list">
             <p><i className="fa-solid fa-check"></i> Find something to watch on your subscribed streaming services</p>
             <p><i className="fa-solid fa-check"></i> Log the movies and TV shows you have watched</p>
-            <p><i className="fa-solid fa-check"></i> Keep track of your favourite movies and TV shows and get recommendations from them</p>
+            <p><i className="fa-solid fa-check"></i> Keep track of your Favorite movies and TV shows and get recommendations from them</p>
             <p><i className="fa-solid fa-check"></i> Build and maintain a personal watchlist</p>
             <p><i className="fa-solid fa-check"></i> Build custom mixed lists (movies and TV)</p>
             <p><i className="fa-solid fa-check"></i> Take part in movie and TV discussions</p>

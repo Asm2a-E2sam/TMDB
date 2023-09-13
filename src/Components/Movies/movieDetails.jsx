@@ -9,9 +9,10 @@ import { BsFillBookmarkFill } from 'react-icons/bs'
 import { AiFillStar } from 'react-icons/ai'
 import {MdFormatListBulleted, MdFavorite} from 'react-icons/md'
 import axiosInstance from '../../axiosConfig/instance';
+import { useDispatch, useSelector } from 'react-redux';
 
+import {toggleFavorite} from '../../store/slices/favorite'
 export default function MovieDetails() {
-    
   let myKey = "d4a2b4ff4209071cf753eff2f3d101cd";
   const [movie, setMovie] = useState({});
   const { id } = useParams();
@@ -19,7 +20,7 @@ export default function MovieDetails() {
     .get(`/3/movie/${id}?api_key=${myKey}`)
     .then((res) => {
       setMovie(res.data);
-      console.log(res.data);
+      // console.log(res.data);
     })
     .catch((err) => {
         console.log(err);
@@ -37,6 +38,10 @@ export default function MovieDetails() {
     let year = '';
     let layoutColor = {};
     let genres = '';
+    let isFavorite = false;
+    const dispatch = useDispatch();
+    let favorites = useSelector((state) => state.favorite.favorites);
+
     if (movie && movie.release_date) {
         year = movie.release_date.split("-")[0];
       }
@@ -46,6 +51,9 @@ export default function MovieDetails() {
         layoutColor = {
             backgroundImage: `linear-gradient(to right, #${color} calc(30vw - 140px), #${color}d6 50%, #${color}d6 100%)`,
         };
+        if (favorites) {
+          isFavorite = favorites.find((favmovie) => favmovie.id === movie.id) || false;
+      }
     }
     if (movie && movie.genres){
         for (const index in movie.genres) {
@@ -69,7 +77,13 @@ export default function MovieDetails() {
   }else{
     color='rgb(203,206,47)';
   }
-  
+
+  const toggelFavorite = ()=>{
+      dispatch(toggleFavorite(movie))
+      // console.log(favorites);
+      // console.log("click");
+  }
+
     return (
     <>
       <Container fluid className="p-0">
@@ -107,7 +121,7 @@ export default function MovieDetails() {
                 <h6 className="fw-bold text-white"> Score</h6>
                 </div>
                 <span className="circle ms-4"><MdFormatListBulleted className="options"/></span>
-                <span className="circle ms-4"><MdFavorite className="options"/></span>
+                <span className="circle ms-4" onClick={toggelFavorite} role="button"><MdFavorite className={`${isFavorite ? "options2":"options"}`}/></span>
                 <span className="circle ms-4"><BsFillBookmarkFill className="options"/></span>
                 <span className="circle ms-4"><AiFillStar className="options"/></span>
                 <span className='ms-4 text-white'><BiSolidRightArrow/> Play Trailer</span>
