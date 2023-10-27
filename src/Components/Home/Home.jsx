@@ -1,5 +1,5 @@
 // import { useLoaderData } from "react-router-dom";
-import './Home.css'
+import './home.css'
 import MovieCard from "../Movies/card";
 import { Container, Row } from "react-bootstrap";
 import axiosInstance from "../../axiosConfig/instance";
