@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import MovieCard from "./card";
+import TVCard from "./tvCard";
 import { Col, Container, Row } from "react-bootstrap";
 import SideMenu from "./sideMenu";
 import axiosInstance from "../../axiosConfig/instance";
-function AllMovies() {
+import { useNavigate } from "react-router-dom";
+function AllTVShows() {
   let myKey = "d4a2b4ff4209071cf753eff2f3d101cd";
   let [movies, setMovies] = useState([]);
   let [pageNum, setPageNum] = useState(1);
@@ -11,7 +12,7 @@ function AllMovies() {
   useEffect(() => {
     
     axiosInstance
-    .get(`/3/movie/popular?api_key=${myKey}&page=${pageNum}`
+    .get(`/3/tv/popular?api_key=${myKey}&page=${pageNum}`
       )
       .then((res) => {
         setMovies(res.data.results);
@@ -21,10 +22,6 @@ function AllMovies() {
         console.log(err);
       });
   }, [pageNum]);
-
-  const showDetails=(id)=>{
-    navigate(`/movies/${id}`)
-  }
 
   const paginate = (num) => {
     if(num > 0 ){
@@ -41,6 +38,11 @@ function AllMovies() {
   //     date:"Jun 14, 2023",
   //     percentage:"78"
   // }
+//   console.log(movies);
+const navigate = useNavigate()
+const showDetails=(id)=>{
+  navigate(`/tv/${id}`)
+}
   let staticPathImg = "https://www.themoviedb.org/t/p/w220_and_h330_face/";
   return (
     <>
@@ -57,13 +59,13 @@ function AllMovies() {
               {movies.map((movie) => {
                 return (
                   <div className="cards px-0" key={movie.id}>
-                    <MovieCard
+                    <TVCard
                       path={staticPathImg + movie.poster_path}
-                      movie={movie}
-                      title={movie.title}
-                      date={movie.release_date}
+                      title={movie.name}
+                      date={movie.first_air_date}
                       percentage={movie.vote_average * 10}
                       id={movie.id}
+                      movie={movie}
                       onClick={()=>{showDetails(movie.id)}}
                     />
                   </div>
@@ -85,4 +87,4 @@ function AllMovies() {
   );
 }
 
-export default AllMovies;
+export default AllTVShows;

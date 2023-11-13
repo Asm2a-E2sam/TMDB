@@ -12,14 +12,12 @@ import axiosInstance from "../../axiosConfig/instance";
 import { useDispatch, useSelector } from "react-redux";
 
 import { toggleFavorite } from "../../store/slices/favorite";
-import { LanguageContext } from "../../context/LanguageContext";
-import { useContext } from "react";
-export default function MovieDetails() {
+export default function TVDetails() {
   let myKey = "d4a2b4ff4209071cf753eff2f3d101cd";
   const [movie, setMovie] = useState({});
   const { id } = useParams();
   axiosInstance
-    .get(`/3/movie/${id}?api_key=${myKey}`)
+    .get(`/3/tv/${id}?api_key=${myKey}`)
     .then((res) => {
       setMovie(res.data);
       // console.log(res.data);
@@ -41,7 +39,6 @@ export default function MovieDetails() {
   let layoutColor = {};
   let genres = "";
   let isFavorite = false;
-  const {language} = useContext(LanguageContext);
   const dispatch = useDispatch();
   let favorites = useSelector((state) => state.favorite.favorites);
 
@@ -59,6 +56,7 @@ export default function MovieDetails() {
         favorites.find((favmovie) => favmovie.id === movie.id) || false;
     }
   }
+  
   if (movie && movie.genres) {
     for (const index in movie.genres) {
       if (index < movie.genres.length - 1) {
@@ -125,7 +123,7 @@ export default function MovieDetails() {
                 </ul>
               </div>
               <div className="d-flex align-items-center">
-                <div className={`myprogress-2 ${language==="AR"&&"myprogress-2-ar"}`}>
+                <div className="myprogress-2">
                   <Progress
                     percentage={movie.vote_average * 10}
                     color={color}

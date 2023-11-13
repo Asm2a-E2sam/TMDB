@@ -5,12 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorite } from "../../store/slices/favorite";
-import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../context/AuthContext";
+import { useContext } from "react";
 import { LanguageContext } from "../../context/LanguageContext";
 
-function MovieCard(args) {
+function TVCard(args) {
   let color = "";
   if (args.percentage >= 70) {
     color = "rgb(1,210,119)";
@@ -23,11 +23,10 @@ function MovieCard(args) {
 
   console.log(favorites);
   let isFavorite =
-    favorites.find((favmovie) => favmovie.id === args.id) || false;
+    favorites.find((favmovie) => favmovie.id === args.movie.id) || false;
   const navigate = useNavigate();
   const { isLogged } = useContext(AuthContext);
   const { language } = useContext(LanguageContext);
-
   const toggelFavorite = () => {
     if(isLogged){
       dispatch( toggleFavorite(args.movie));
@@ -45,13 +44,12 @@ function MovieCard(args) {
     }
   };
   
-  const showDetails=(id)=>{
-    navigate(`/movies/${id}`)
-  }
-  
+  // const showDetails=(id)=>{
+  //   navigate(`/tv/${id}`)
+  // }
   return (
     <>
-      <Card className={`card card-sm shadow-sm ${language==="AR"&&"card-ar"}`}>
+      <Card  className={`card card-sm shadow-sm ${language==="AR"&&"card-ar"}`}>
         <img src={`${args.path}`} className="card-img" onClick={()=>{showDetails(args.id)}} role="button"/>
         <div className="d-flex justify-content-between align-items-center">
           <div className={`myprogress ${language==="AR"&&"myprogress-ar"}`}>
@@ -68,11 +66,11 @@ function MovieCard(args) {
             />
           </div>
         </div>
-        <h5 onClick={()=>{showDetails(args.id)}} role="button">{args.title}</h5>
+        <h5>{args.title}</h5>
         <span className="date">{args.date}</span>
       </Card>
     </>
   );
 }
 
-export default MovieCard;
+export default TVCard;

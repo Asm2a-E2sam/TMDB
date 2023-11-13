@@ -27,6 +27,12 @@
     left: 10px;
 }
 
+.favourite{
+    position: relative;
+    top: -270px;
+    right: 10px;
+}
+
 .myprogress div{
     position: relative;
     top: -26px;
@@ -159,7 +165,7 @@ h5+span{
 .options{
     font-size: 17px;
     margin-top: 15px;
-    color: white !important;
+    color: #cccccc !important;
 }
 
 .options2{
@@ -167,3 +173,54 @@ h5+span{
     margin-top: 15px;
     color: #ef47b6 !important;
 }
+
+.favourite-ar{
+    right: -10px !important;
+}
+
+.myprogress-ar{
+    left: -10px !important;
+}
+
+.myprogress-ar div{
+    left: -8px !important;
+}
+
+.myprogress-ar span{
+    left: 3px !important;
+}
+
+.card-ar h5{
+    padding-right: 10px !important;
+}
+.card-ar .date{
+    padding-right: 10px !important;
+}
+
+.myprogress-2-ar{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 2px;
+    background-color: #081c22;
+    position: relative;
+}
+
+.myprogress-2-ar div{
+    position: relative;
+    top: -50px;
+    font-size: 25px !important;
+    color: white;
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    left: -12px;
+}
+
+.myprogress-2-ar span{
+    font-size: 10px !important;
+    position: relative;
+    color: white;
+    top: -12px !important;
+    left: 5px;
+}
+

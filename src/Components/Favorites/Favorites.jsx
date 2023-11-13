@@ -19,16 +19,17 @@ export default function Favorites(){
     return( 
         <Container>
             <h2 className="p-5">My Favorites</h2>
-            <Row className="justify-content-center gap-4">
+            <Row className="justify-content-center gap-4 mb-5">
               {movies.map((movie) => {
                 return (
                   <div className="cards px-0" key={movie.id}>
                     <MovieCard
                       path={staticPathImg + movie.poster_path}
-                      title={movie.title}
-                      date={movie.release_date}
+                      title={movie.title||movie.name}
+                      date={movie.release_date||movie.first_air_date}
                       percentage={movie.vote_average * 10}
                       id={movie.id}
+                      movie={movie}
                     />
                   </div>
                 );
